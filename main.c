@@ -121,8 +121,9 @@ int printMenu(char* funcNames[])
 void Ut0( double (*f)(double x), double U[])
 {
     int size = X_N;
+    int i;
     
-    for(int i = 0; i < size; i++)
+    for(i = 0; i < size; i++)
     {
         U[i] = (*f)(i * DELTA_X);
     }
@@ -134,8 +135,9 @@ void Ut0( double (*f)(double x), double U[])
 void writeUtoFile(char* fileName, double U[])
 {
     FILE * file = fopen(fileName, "w");
+    int i;
     
-    for(int i = 0; i < X_N; i++)
+    for(i = 0; i < X_N; i++)
     {
         fprintf(file, "%g %g\n", i * DELTA_X , U[i]);
     }
