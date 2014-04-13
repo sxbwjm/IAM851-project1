@@ -44,8 +44,9 @@ int main(int argc, const char * argv[])
     
     int useFunc = printMenu(funcNames);
     
-    // print initial function
-    printf("Start processing\n");
+    // start processing
+    printf("processing: %%0");
+    fflush(stdout);
     time_t startTime;
     time(&startTime);
     
@@ -57,11 +58,12 @@ int main(int argc, const char * argv[])
     sprintf(fileName, "%s-%d", outputFile, 0);
     writeUtoFile(fileName, U);
     
+    int onePercent = T_N / 100;
     for(t = 1; t < T_N; t++)
     {
         Runge_Kutta(rhsFunc, U, newU);
         
-        //
+        // save data into file for every specific steps
         if( t % T_STEPS_PER_FILE == 0)
         {
             char fileName[20];
@@ -69,14 +71,24 @@ int main(int argc, const char * argv[])
             writeUtoFile(fileName, newU);
         }
         
+        // show progress
+        if( t % onePercent == 0)
+        {
+            printf("\rprocessing: %%%d", t / onePercent);
+            fflush(stdout);
+        }
+        
         // update U
         vector_copy(newU, U, X_N);
     }
     
+    // create plot script
     createPlotScript("animate.plt", useFunc);
+    
+    // end processing
     time_t endTime;
     time(&endTime);
-    printf("process time: %.3f\n secs", difftime(endTime, startTime));
+    printf("\nprocess time: %.3f secs\n", difftime(endTime, startTime));
     printf("Please run \"gnuplot animate.plt\" to show the result\n\n");
     
     return 0;
