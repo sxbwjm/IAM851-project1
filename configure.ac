@@ -6,13 +6,15 @@ AC_INIT([IAM851 Project1], [1.0])
 AM_INIT_AUTOMAKE([-Wall foreign])
 m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
 #AX_CHECK_COMPILER_FLAGS([-Wall], [CFLAGS="$CFLAGS -Wall"])
+AC_CHECK_LIB([m],[cos])
+
 AC_OPENMP
 CFLAGS="$CFLAGS $OPENMP_CFLAGS"
 
 # Checks for programs.
 
 
-AC_PROG_CC
+AC_PROG_CC_C99
 AM_PROG_CC_C_O
 
 # create directory for output
