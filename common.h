@@ -12,9 +12,9 @@
 #define X_N 400
 #define DELTA_X 0.1
 
-#define T_N 20000
+#define T_N 200000
 #define DELTA_T 0.00002
-#define T_STEPS_PER_FILE 100
+#define T_STEPS_PER_FILE 200
 
 // vector
 void vector_init(double result[], int size);

@@ -88,7 +88,8 @@ int main(int argc, const char * argv[])
     // end processing
     time_t endTime;
     time(&endTime);
-    printf("\nprocess time: %.3f secs\n", difftime(endTime, startTime));
+    printf("\rprocessing:100%%\n");
+    printf("process time: %.3f secs\n", difftime(endTime, startTime));
     printf("Please run \"gnuplot animate.plt\" to show the result\n\n");
     
     return 0;
