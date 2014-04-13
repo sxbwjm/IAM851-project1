@@ -57,8 +57,9 @@ void rhsFunc(double U[], double newU[])
 {
     double u_2, u_1, u, u1, u2;
     int size = X_N;
+    int i;
     
-    for(int i=0; i<size; i++)
+    for(i=0; i<size; i++)
     {
         // test boundaries
         u_2 = (i - 2 >= 0) ? U[i - 2] : U[i - 2 + size];
