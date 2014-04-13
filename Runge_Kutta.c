@@ -10,7 +10,8 @@
 #include "common.h"
 
 /*************************************************************
- *      Runge–Kutta 4th-Order Method
+ *          Runge–Kutta 4th-Order Method
+ *
  * solve the following ordinary differential equations:
  *    u' = f(u)
  *
@@ -18,7 +19,7 @@
  * u:  initial value (array)
  * h:  step size
  *
- * returns next frame u
+ * returns next frame of u
  *************************************************************/
 void Runge_Kutta(void (*f)(double u[], double newU[]),
                    double u[], double newU[])

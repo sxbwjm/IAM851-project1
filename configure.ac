@@ -5,13 +5,19 @@ AC_PREREQ(2.61)
 AC_INIT([IAM851 Project1], [1.0])
 AM_INIT_AUTOMAKE([-Wall foreign])
 m4_ifdef([AM_SILENT_RULES], [AM_SILENT_RULES([yes])])
+#AX_CHECK_COMPILER_FLAGS([-Wall], [CFLAGS="$CFLAGS -Wall"])
+AC_OPENMP
+CFLAGS="$CFLAGS $OPENMP_CFLAGS"
 
 # Checks for programs.
+
 
 AC_PROG_CC
 AM_PROG_CC_C_O
 
+# create directory for output
 AC_CONFIG_COMMANDS([mkdir], [$MKDIR_P output])
+
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_FILES([Makefile])
 AC_OUTPUT
