@@ -10,7 +10,6 @@
 
 void vector_init(double result[], int size)
 {
-    #pragma omp parallel for
     for(int i=0; i < size; i++)
     {
         result[i] = 0.0;
@@ -18,7 +17,6 @@ void vector_init(double result[], int size)
 }
 void vector_add(double result[], double v1[], double v2[], int size)
 {
-    #pragma omp parallel for
     for(int i=0; i < size; i++)
     {
         result[i] = v1[i] + v2[i];
@@ -27,7 +25,6 @@ void vector_add(double result[], double v1[], double v2[], int size)
 
 void vector_mul_const(double result[], double v1[], double k, int size)
 {
-    #pragma omp parallel for
     for(int i=0; i < size; i++)
     {
         result[i] = v1[i] * k;
@@ -36,7 +33,6 @@ void vector_mul_const(double result[], double v1[], double k, int size)
 
 void vector_copy(double src[], double dest[], int size)
 {
-    #pragma omp parallel for
     for(int i=0; i < size; i++)
     {
         dest[i] = src[i];

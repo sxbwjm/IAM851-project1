@@ -36,10 +36,10 @@ int main(int argc, const char * argv[])
         initFunc4
     };
     char* funcNames[] = {
-        "u(x,0) = N(N+1)/cosh(x)^2    N = 0.25",
-        "u(x,0) = N(N+1)/cosh(x)^2    N = 1  \t\t\t one soliton",
-        "u(x,0) = (c/2)/cosh2(√c/2)   c = 10 \t\t\t one soliton",
-        "u(x,0) = (c1/2)/cosh2(√c1/2)+(c2/2)/cosh2(√c2/2)\t two soliton"
+        "u(x,0) = N(N+1)/cosh(x-20)^2\t\tN = 0.25",
+        "u(x,0) = N(N+1)/cosh(x-20)^2\t\tN = 1",
+        "u(x,0) = (c/2)/cosh2(√c/2 * (x-20))\tc = 10",
+        "u(x,0) = (c1/2)/cosh2(√c1/2 * (x-10)+(c2/2)/cosh2(√c2/2 * (x-20))"
     };
     
     int useFunc = printMenu(funcNames);

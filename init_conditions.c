@@ -17,7 +17,7 @@
 double initFunc1(double x)
 {
     double N = 0.25;
-    double tmp = cosh(x - 10);
+    double tmp = cosh(x - 20);
     return N * (N + 1) / (tmp * tmp);
 }
 
@@ -25,7 +25,7 @@ double initFunc1(double x)
 double initFunc2(double x)
 {
     double N = 1;
-    double tmp = cosh(x - 10);
+    double tmp = cosh(x - 20);
     return N * (N + 1) / (tmp * tmp);
 }
 
@@ -33,7 +33,7 @@ double initFunc2(double x)
 double initFunc3(double x)
 {
     double c = 5 ;
-    double tmp = cosh( sqrt(c) * (-x+20) / 2);
+    double tmp = cosh( sqrt(c) * (x-20) / 2);
     return c / (tmp * tmp) / 2;
 }
 

@@ -13,7 +13,7 @@
 #define DELTA_X 0.1
 
 #define T_N 200000
-#define DELTA_T 0.00002
+#define DELTA_T 0.00004
 #define T_STEPS_PER_FILE 200
 
 // vector

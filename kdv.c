@@ -59,6 +59,7 @@ void rhsFunc(double U[], double newU[])
     int size = X_N;
     int i;
     
+    #pragma omp parallel for threads(4)
     for(i=0; i<size; i++)
     {
         // test boundaries
