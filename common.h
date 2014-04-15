@@ -14,7 +14,7 @@
 
 #define T_N 200000
 #define DELTA_T 0.00004
-#define T_STEPS_PER_FILE 200
+#define T_STEPS_PER_FILE 500
 
 // vector
 void vector_init(double result[], int size);
